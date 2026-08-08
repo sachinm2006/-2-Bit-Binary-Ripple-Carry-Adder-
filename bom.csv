@@ -1,0 +1,11 @@
+﻿Name,Quantity,Component
+"T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23",23," NPN Transistor (BJT)"
+"R1, R2, R3, R4, R8, R9, R10, R13, R15, R16, R19, R20, R21, R22, R26, R27, R28, R31, R32, R33, R34, R38, R39, R40",24,"10 kΩ Resistor"
+"R5, R7, R14, R17, R23, R25, R30, R35, R37, R42",10,"220 Ω Resistor"
+"R6, R12, R18, R24, R36",5,"1 kΩ Resistor"
+"R11, R29, R41",3,"2.2 kΩ Resistor"
+"D2",1,"Yellow LED"
+"S7, S8, S11, S12",4," Slideswitch"
+"D4",1,"Red LED"
+"D7",1,"Blue LED"
+"BAT1",1," 9V Battery"
