@@ -3,7 +3,7 @@ Design and Implementation of a 2-Bit Binary Ripple Carry Adder Using Discrete Tr
 
 
 
-     Mini-Project Report
+Mini-Project Report
 
 Design and Implementation of a 2-Bit Binary Ripple Carry Adder
 Using Discrete Transistor Logic
