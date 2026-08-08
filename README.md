@@ -80,3 +80,102 @@ While industrial electronics rely on highly miniaturized silicon ICs, constructi
 3.3. Digital Signal Processing (DSP): Hardware-level adders are crucial for executing the rapid arithmetic required in real-time audio, video, and communications filtering algorithms.
 4.4. Hardware Emulation and Education: Constructing logic gates from discrete components provides an essential understanding of semiconductor switching times, propagation delays, and logic thresholds, which are vital concepts in VLSI (Very Large Scale Integration) design.
 
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+Yes. If you mean a **2-bit binary adder** where:
+
+* `A = A1 A0`
+* `B = B1 B0`
+* Output is a **3-bit sum** `S2 S1 S0`
+* `A1/B1` are the MSBs and `A0/B0` are the LSBs
+
+then there are **4 × 4 = 16 possible input combinations**.
+
+### 2-bit Adder Truth Table
+
+|  # |  A1 |  A0 |  B1 |  B0 | A (decimal) | B (decimal) | Sum (decimal) |  S2 |  S1 |  S0 |
+| -: | :-: | :-: | :-: | :-: | ----------: | ----------: | ------------: | :-: | :-: | :-: |
+|  1 |  0  |  0  |  0  |  0  |           0 |           0 |             0 |  0  |  0  |  0  |
+|  2 |  0  |  0  |  0  |  1  |           0 |           1 |             1 |  0  |  0  |  1  |
+|  3 |  0  |  0  |  1  |  0  |           0 |           2 |             2 |  0  |  1  |  0  |
+|  4 |  0  |  0  |  1  |  1  |           0 |           3 |             3 |  0  |  1  |  1  |
+|  5 |  0  |  1  |  0  |  0  |           1 |           0 |             1 |  0  |  0  |  1  |
+|  6 |  0  |  1  |  0  |  1  |           1 |           1 |             2 |  0  |  1  |  0  |
+|  7 |  0  |  1  |  1  |  0  |           1 |           2 |             3 |  0  |  1  |  1  |
+|  8 |  0  |  1  |  1  |  1  |           1 |           3 |             4 |  1  |  0  |  0  |
+|  9 |  1  |  0  |  0  |  0  |           2 |           0 |             2 |  0  |  1  |  0  |
+| 10 |  1  |  0  |  0  |  1  |           2 |           1 |             3 |  0  |  1  |  1  |
+| 11 |  1  |  0  |  1  |  0  |           2 |           2 |             4 |  1  |  0  |  0  |
+| 12 |  1  |  0  |  1  |  1  |           2 |           3 |             5 |  1  |  0  |  1  |
+| 13 |  1  |  1  |  0  |  0  |           3 |           0 |             3 |  0  |  1  |  1  |
+| 14 |  1  |  1  |  0  |  1  |           3 |           1 |             4 |  1  |  0  |  0  |
+| 15 |  1  |  1  |  1  |  0  |           3 |           2 |             5 |  1  |  0  |  1  |
+| 16 |  1  |  1  |  1  |  1  |           3 |           3 |             6 |  1  |  1  |  0  |
+
+### How the 2-bit addition works
+
+For example:
+
+```text
+       A1 A0
+       0  1        = 1
+     + B1 B0
+       1  1        = 3
+     --------
+       S2 S1 S0
+       1  0  0     = 4
+```
+
+So:
+
+**01 + 11 = 100**
+
+The important point is that a 2-bit + 2-bit addition can produce a **3-bit result**, because the maximum is:
+
+```text
+  11  = 3
++ 11  = 3
+---------
+ 110  = 6
+```
+
+### Circuit-level view
+
+A 2-bit adder is normally built using **two full/half-adder stages**:
+
+```text
+        A0 ─────┐
+                │
+        B0 ─────┤  HA/FA ───── S0
+                │       │
+                │       └──── C1
+                │
+        A1 ─────┤
+                │
+        B1 ─────┤  FA ──────── S1
+                │       │
+                │       └──── C2 = S2
+```
+
+Where:
+
+* `S0` = LSB of result
+* `C1` = carry from bit 0 to bit 1
+* `S1` = second result bit
+* `C2` = final carry, which becomes `S2`
+
+If you're building this using **logic gates**, I can also give you the **complete 2-bit adder truth table including A0, B0, Carry-in, Sum0, Carry1, A1, B1, Sum1, and Carry-out**, which is the table you'll need to actually design the circuit.
+
