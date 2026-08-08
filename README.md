@@ -95,6 +95,15 @@ While industrial electronics rely on highly miniaturized silicon ICs, constructi
 
 
 
+<br
+       <br>
+       <br>
+
+
+
+
+
+
 Yes. If you mean a **2-bit binary adder** where:
 
 * `A = A1 A0`
