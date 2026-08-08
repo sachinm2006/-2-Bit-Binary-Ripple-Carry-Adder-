@@ -1,6 +1,8 @@
 # -2-Bit-Binary-Ripple-Carry-Adder-
 Design and Implementation of a 2-Bit Binary Ripple Carry Adder Using Discrete Transistor Logic
 
+link for the project simulation in tinkercad--- https://www.tinkercad.com/things/4k6UcEoDDM4-2-bit-adder-30
+
 
 
 Mini-Project Report
