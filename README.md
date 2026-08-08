@@ -87,7 +87,7 @@ While industrial electronics rely on highly miniaturized silicon ICs, constructi
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-2-Bit Binary Adder – Truth Table and Working
+<ul><h2>2-Bit Binary Adder – Truth Table and Working</h2></ul>
 
 
 
@@ -95,7 +95,7 @@ While industrial electronics rely on highly miniaturized silicon ICs, constructi
 
 
 
-<br
+
        <br>
        <br>
 
